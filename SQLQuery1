@@ -1,0 +1,66 @@
+/*
+CREATE DATABASE Products
+go
+Use Products
+
+go 
+CREATE TABLE Product
+(Id Int PRIMARY KEY IDENTITY,
+Name_Product NVARCHAR(20) Not NULL)
+
+CREATE TABLE Categories
+(Id Int PRIMARY KEY IDENTITY,
+Name_Categories NVARCHAR(20) Not NULL)
+
+
+CREATE TABLE List
+(ProductID INT REFERENCES Product (Id),
+CategorieID INT REFERENCES Categories (Id) NUll)
+
+go
+
+INSERT INTO Product 
+VALUES
+('iPhone 6'),
+('Galaxy S8'),
+('Galaxy S8 Plus'),
+('BMW'),
+('LADA'),
+('NISSAN'),
+('BOING')
+
+INSERT INTO Categories 
+VALUES
+('Phones'),
+('Cars')
+
+
+Go
+
+INSERT INTO List 
+VALUES
+(1,1),
+(2,1),
+(3,1),
+(4,2),
+(5,2),
+(6,2)
+*/
+
+
+/*
+INSERT INTO Categories 
+VALUES
+('Apple')
+INSERT INTO List 
+VALUES
+(1,3)*/
+
+
+
+SELECT Name_Product,Name_Categories
+from Product Left join List on Product.id=List.ProductID
+Left join Categories on  Categories.id=List.CategorieID
+
+
+
